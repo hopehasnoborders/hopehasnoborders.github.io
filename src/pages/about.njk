@@ -11,14 +11,14 @@ layout: layouts/base.njk
 
 <div class="pt-32 pb-16 relative z-10">
     <div class="container mx-auto px-6 max-w-4xl text-center mb-16">
-        <span class="inline-block py-1 px-3 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold mb-6 animate-in">{{ about[lang].est }}</span>
+        <span class="inline-block py-1 px-3 rounded-full bg-yarrow/20 text-yarrow text-sm font-semibold mb-6 animate-in">{{ about[lang].est }}</span>
         <h1 class="text-5xl md:text-7xl font-serif mb-8 animate-in" style="animation-delay: 100ms;">{{ about[lang].hero_title }}</h1>
         <p class="text-xl text-neutral-600 font-light leading-relaxed mb-10 animate-in" style="animation-delay: 200ms;">
             {{ about[lang].hero_text }}
         </p>
         <div class="flex flex-wrap justify-center gap-4 animate-in" style="animation-delay: 300ms;">
             <a href="mailto:hopehasnoborders@gmail.com"
-                class="bg-black text-white px-8 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-orange-600 transition-colors">
+                class="bg-black text-white px-8 py-3 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-yarrow hover:text-black transition-all">
                 {{ about[lang].cta_button }}
             </a>
         </div>
@@ -26,7 +26,7 @@ layout: layouts/base.njk
 
     <!-- Our Story Section -->
     <div class="container mx-auto px-6 max-w-5xl mb-24">
-        <div class="bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-sm border border-orange-100/50">
+        <div class="bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-sm border border-neutral-100">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl font-serif mb-6">{{ about[lang].story_title }}</h2>
@@ -37,17 +37,17 @@ layout: layouts/base.njk
                         {{ about[lang].story_p2 }}
                     </p>
                 </div>
-                <div class="bg-orange-50 p-8 rounded-xl text-center">
-                    <div class="text-6xl font-serif text-orange-600 mb-2">{{ about[lang].stat_volunteers }}</div>
+                <div class="bg-neutral-50 p-8 rounded-xl text-center">
+                    <div class="text-6xl font-serif text-yarrow mb-2">{{ about[lang].stat_volunteers }}</div>
                     <div class="text-neutral-900 font-bold uppercase tracking-wide mb-8">{{ about[lang].stat_volunteers_label }}</div>
                     
                     <div class="grid grid-cols-2 gap-6 text-left">
                         <div>
-                            <div class="text-3xl font-serif text-orange-600">{{ about[lang].stat_days }}</div>
+                            <div class="text-3xl font-serif text-yarrow">{{ about[lang].stat_days }}</div>
                             <div class="text-sm text-neutral-600">{{ about[lang].stat_days_label }}</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-serif text-orange-600">{{ about[lang].stat_support }}</div>
+                            <div class="text-3xl font-serif text-yarrow">{{ about[lang].stat_support }}</div>
                             <div class="text-sm text-neutral-600">{{ about[lang].stat_support_label }}</div>
                         </div>
                     </div>
@@ -58,9 +58,9 @@ layout: layouts/base.njk
 
     <!-- Mission Section -->
     <div class="bg-neutral-900 text-white py-24 mb-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-orange-900/20"></div>
+        <div class="absolute inset-0 bg-white/5"></div>
         <div class="container mx-auto px-6 text-center max-w-3xl relative z-10">
-            <h2 class="text-3xl font-serif mb-8 text-orange-100">{{ about[lang].mission_title }}</h2>
+            <h2 class="text-3xl font-serif mb-8 text-yarrow tracking-wide">{{ about[lang].mission_title }}</h2>
             <p class="text-2xl font-light leading-relaxed">
                 {{ about[lang].mission_text }}
             </p>
@@ -73,7 +73,7 @@ layout: layouts/base.njk
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Program 1 -->
             <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow group">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                <div class="w-12 h-12 bg-yarrow/20 rounded-lg flex items-center justify-center mb-6 text-yarrow group-hover:bg-yarrow group-hover:text-black transition-all">
                     <i data-lucide="heart-handshake"></i>
                 </div>
                 <h3 class="font-serif text-xl mb-3">{{ about[lang].prog1_title }}</h3>
@@ -84,7 +84,7 @@ layout: layouts/base.njk
 
             <!-- Program 2 -->
             <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow group">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                <div class="w-12 h-12 bg-yarrow/20 rounded-lg flex items-center justify-center mb-6 text-yarrow group-hover:bg-yarrow group-hover:text-black transition-all">
                     <i data-lucide="scale"></i>
                 </div>
                 <h3 class="font-serif text-xl mb-3">{{ about[lang].prog2_title }}</h3>
@@ -95,7 +95,7 @@ layout: layouts/base.njk
 
             <!-- Program 3 -->
             <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow group">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                <div class="w-12 h-12 bg-yarrow/20 rounded-lg flex items-center justify-center mb-6 text-yarrow group-hover:bg-yarrow group-hover:text-black transition-all">
                     <i data-lucide="home"></i>
                 </div>
                 <h3 class="font-serif text-xl mb-3">{{ about[lang].prog3_title }}</h3>
@@ -106,7 +106,7 @@ layout: layouts/base.njk
 
             <!-- Program 4 -->
             <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow group">
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                <div class="w-12 h-12 bg-yarrow/20 rounded-lg flex items-center justify-center mb-6 text-yarrow group-hover:bg-yarrow group-hover:text-black transition-all">
                     <i data-lucide="users"></i>
                 </div>
                 <h3 class="font-serif text-xl mb-3">{{ about[lang].prog4_title }}</h3>

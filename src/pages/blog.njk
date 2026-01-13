@@ -9,13 +9,13 @@ layout: layouts/base.njk
 <section class="py-24 bg-neutral-50">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16 max-w-3xl mx-auto">
-            <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block animate-in">{{ blog[lang].hero_label }}</span>
+            <span class="text-yarrow font-bold tracking-widest text-xs uppercase mb-4 block animate-in">{{ blog[lang].hero_label }}</span>
             <h1 class="text-4xl md:text-5xl font-serif leading-tight text-neutral-900 animate-in delay-100">{{ blog[lang].hero_title }}</h1>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for post in collections.blog | reverse %}
-            <a href="{{ post.url }}" class="group block bg-white border border-neutral-100 hover:border-orange-600 transition-all shadow-sm hover:shadow-lg rounded-sm overflow-hidden flex flex-col h-full animate-in delay-200">
+            <a href="{{ post.url }}" class="group block bg-white border border-neutral-100 hover:border-yarrow transition-all shadow-sm hover:shadow-lg rounded-sm overflow-hidden flex flex-col h-full animate-in delay-200">
                 {% if post.data.image %}
                 <div class="aspect-video overflow-hidden">
                     <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -25,9 +25,9 @@ layout: layouts/base.njk
                     <div class="mb-4 text-xs font-bold uppercase tracking-widest text-neutral-400">
                         {{ post.date | date }}
                     </div>
-                    <h3 class="text-2xl font-serif mb-3 group-hover:text-orange-600 transition-colors">{{ post.data.title }}</h3>
+                    <h3 class="text-2xl font-serif mb-3 group-hover:text-yarrow transition-colors">{{ post.data.title }}</h3>
                     <p class="text-neutral-600 font-light mb-6 flex-1 line-clamp-3">{{ post.data.description }}</p>
-                    <span class="text-orange-600 font-bold uppercase text-xs tracking-widest flex items-center gap-2">{{ blog[lang].read_more }} <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></span>
+                    <span class="text-yarrow font-bold uppercase text-xs tracking-widest flex items-center gap-2">{{ blog[lang].read_more }} <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></span>
                 </div>
             </a>
             {% endfor %}

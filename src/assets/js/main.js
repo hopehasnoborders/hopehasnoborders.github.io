@@ -18,7 +18,7 @@
                 (currentPath.endsWith('/') && href === currentPath.slice(0, -1) + '.html') ||
                 (href.endsWith('.html') && currentPath === href.replace('.html', '/'))
             ) {
-                link.classList.add('text-orange-600');
+                link.classList.add('text-yarrow');
             }
         });
 

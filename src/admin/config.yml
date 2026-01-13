@@ -29,7 +29,10 @@ collections:
               {label: "Footer Copyright", name: "footer_copyright", widget: "string"},
               {label: "Footer Privacy", name: "footer_privacy", widget: "string"},
               {label: "Footer Terms", name: "footer_terms", widget: "string"},
-              {label: "Nav Blog", name: "nav_blog", widget: "string"}
+              {label: "Nav Blog", name: "nav_blog", widget: "string"},
+              {label: "Announcement Bar Text", name: "announcement_text", widget: "string", required: false},
+              {label: "Announcement Bar Link Text", name: "announcement_link_text", widget: "string", required: false},
+              {label: "Announcement Bar Link URL", name: "announcement_link_url", widget: "string", required: false}
             ]}
           - {label: "Spanish", name: "es", widget: "object", fields: [
               {label: "Nav Home", name: "nav_home", widget: "string"},
@@ -43,8 +46,17 @@ collections:
               {label: "Footer Copyright", name: "footer_copyright", widget: "string"},
               {label: "Footer Privacy", name: "footer_privacy", widget: "string"},
               {label: "Footer Terms", name: "footer_terms", widget: "string"},
-              {label: "Nav Blog", name: "nav_blog", widget: "string"}
+              {label: "Nav Blog", name: "nav_blog", widget: "string"},
+              {label: "Announcement Bar Text", name: "announcement_text", widget: "string", required: false},
+              {label: "Announcement Bar Link Text", name: "announcement_link_text", widget: "string", required: false},
+              {label: "Announcement Bar Link URL", name: "announcement_link_url", widget: "string", required: false}
             ]}
+      - file: "src/_data/settings.json"
+        label: "Site Controls"
+        name: "site_controls"
+        fields:
+          - {label: "Show Announcement Bar", name: "show_announcement", widget: "boolean", default: false}
+          - {label: "Yarrow Color (Hex)", name: "yarrow_hex", widget: "string", default: "#FFB81C"}
 
   - name: "pages_data"
     label: "Page Content (I18n)"
@@ -319,7 +331,14 @@ collections:
               {label: "Hero Text", name: "hero_text", widget: "text"},
               {label: "Body Text", name: "body_text", widget: "text"},
               {label: "CTA Text", name: "cta_text", widget: "string"},
-              {label: "CTA Link", name: "cta_link", widget: "string"}
+              {label: "CTA Link", name: "cta_link", widget: "string"},
+              {label: "Shop Title", name: "shop_title", widget: "string"},
+              {label: "Shop Items", name: "shop_items", widget: "list", fields: [
+                  {label: "Name", name: "name", widget: "string"},
+                  {label: "Price", name: "price", widget: "string"},
+                  {label: "Image", name: "image", widget: "image"},
+                  {label: "Description", name: "desc", widget: "text"}
+              ]}
             ]}
           - {label: "Spanish Content", name: "es", widget: "object", fields: [
               {label: "Title", name: "title", widget: "string"},
@@ -329,7 +348,14 @@ collections:
               {label: "Hero Text", name: "hero_text", widget: "text"},
               {label: "Body Text", name: "body_text", widget: "text"},
               {label: "CTA Text", name: "cta_text", widget: "string"},
-              {label: "CTA Link", name: "cta_link", widget: "string"}
+              {label: "CTA Link", name: "cta_link", widget: "string"},
+              {label: "Shop Title", name: "shop_title", widget: "string"},
+              {label: "Shop Items", name: "shop_items", widget: "list", fields: [
+                  {label: "Name", name: "name", widget: "string"},
+                  {label: "Price", name: "price", widget: "string"},
+                  {label: "Image", name: "image", widget: "image"},
+                  {label: "Description", name: "desc", widget: "text"}
+              ]}
             ]}
 
       - file: "src/_data/host.json"

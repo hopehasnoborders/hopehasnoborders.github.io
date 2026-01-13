@@ -22,7 +22,8 @@
              serif: ['Playfair Display', 'serif']
           },
           colors: {
-             orange: { 600: '#ea580c', 50: '#fff7ed' }
+             orange: { 600: '#ea580c', 50: '#fff7ed' },
+             yarrow: { DEFAULT: '#FFB81C', 600: '#E5A519' }
           }
         }
       }
@@ -30,8 +31,19 @@
   </script>
   <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
-<body class="antialiased selection:bg-orange-100 selection:text-orange-900 {{ bodyClass }}">
+<body class="antialiased selection:bg-yarrow/30 selection:text-black {{ bodyClass }}">
   
+  {% if settings.show_announcement %}
+  <div class="bg-yarrow text-black py-2 px-4 text-center text-xs font-bold uppercase tracking-widest relative z-50">
+    <div class="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+      <span>{{ i18n[lang].announcement_text }}</span>
+      {% if i18n[lang].announcement_link_url %}
+      <a href="{{ i18n[lang].announcement_link_url }}" class="underline hover:no-underline transition-all">{{ i18n[lang].announcement_link_text }} →</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
   {% include "partials/nav.njk" %}
 
   <main class="flex-grow min-h-screen">

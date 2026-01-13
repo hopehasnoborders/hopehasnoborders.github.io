@@ -13,8 +13,8 @@ class HopeNetwork {
         this.mouseDistance = 200;
         this.baseSpeed = 0.5;
         this.colors = {
-            node: 'rgba(234, 88, 12, 0.4)', // orange-600
-            line: 'rgba(234, 88, 12, 0.15)'
+            node: 'rgba(255, 184, 28, 0.4)', // yarrow #FFB81C
+            line: 'rgba(255, 184, 28, 0.15)'
         };
 
         this.init();

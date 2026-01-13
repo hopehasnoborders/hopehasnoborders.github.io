@@ -14,11 +14,11 @@ bodyClass: home-page
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
   </div>
   <div class="container mx-auto px-6 relative z-10 text-center max-w-5xl mt-20">
-    <p class="text-orange-600 font-bold tracking-[0.3em] text-xs uppercase mb-6 animate-in delay-100">{{ home[lang].hero_subtitle }}</p>
+    <p class="text-yarrow font-bold tracking-[0.3em] text-xs uppercase mb-6 animate-in delay-100">{{ home[lang].hero_subtitle }}</p>
     <h1 class="text-5xl md:text-7xl lg:text-9xl font-serif text-white mb-8 leading-[0.9] tracking-tight animate-in delay-200">{{ home[lang].hero_main_text | safe }}</h1>
     <p class="text-lg md:text-2xl text-neutral-200 font-light mb-12 max-w-2xl mx-auto leading-relaxed text-balance animate-in delay-300">{{ home[lang].hero_body_text }}</p>
     <div class="flex flex-col sm:flex-row gap-6 justify-center animate-in delay-300">
-      <a href="/{{ lang }}/resources/" class="bg-white text-black px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-all duration-300 flex items-center justify-center">{{ home[lang].btn_resources }}</a>
+      <a href="/{{ lang }}/resources/" class="bg-white text-black px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-yarrow hover:text-black transition-all duration-300 flex items-center justify-center">{{ home[lang].btn_resources }}</a>
       <a href="/{{ lang }}/about/" class="border border-white/30 backdrop-blur-sm text-white px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center">{{ home[lang].btn_impact }}</a>
     </div>
   </div>
@@ -27,7 +27,7 @@ bodyClass: home-page
 <!-- 1. Watch: What We Do (Visual Break) -->
 <section class="py-24 bg-black text-white text-center">
     <div class="container mx-auto px-6 max-w-4xl">
-        <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">{{ home[lang].video_title }}</span>
+        <span class="text-yarrow font-bold tracking-widest text-xs uppercase mb-4 block">{{ home[lang].video_title }}</span>
         <h2 class="text-3xl md:text-5xl font-serif mb-8 leading-tight">{{ home[lang].video_quote }}</h2>
         
         <div class="relative w-full aspect-video bg-neutral-900 mb-10 overflow-hidden rounded-sm shadow-2xl border border-neutral-800 group">
@@ -41,7 +41,7 @@ bodyClass: home-page
             </iframe>
         </div>
 
-        <a href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L" target="_blank" class="inline-block bg-orange-600 text-white px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">{{ home[lang].btn_donate }}</a>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L" target="_blank" class="inline-block bg-yarrow text-black px-10 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">{{ home[lang].btn_donate }}</a>
     </div>
 </section>
 
@@ -49,17 +49,23 @@ bodyClass: home-page
 <section class="py-24 bg-white">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16 max-w-3xl mx-auto">
-            <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">{{ home[lang].services_title }}</span>
+            <span class="text-yarrow font-bold tracking-widest text-xs uppercase mb-4 block">{{ home[lang].services_title }}</span>
             <h2 class="text-4xl font-serif leading-tight text-neutral-900">{{ home[lang].services_heading }}</h2>
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
             {% for service in home[lang].services %}
-            <div class="p-8 border border-neutral-100 hover:border-orange-600 transition-colors group">
-                <i data-lucide="{{ service.icon }}" class="w-10 h-10 text-neutral-400 group-hover:text-orange-600 mb-6 transition-colors"></i>
+            <div class="p-8 border border-neutral-100 hover:border-yarrow transition-all group cursor-pointer service-expand-card" onclick="this.classList.toggle('is-expanded')">
+                <div class="flex items-center justify-between mb-6">
+                    <i data-lucide="{{ service.icon }}" class="w-10 h-10 text-neutral-400 group-[.is-expanded]:text-yarrow group-hover:text-yarrow transition-colors"></i>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-400 transition-transform group-[.is-expanded]:rotate-180"></i>
+                </div>
                 <h3 class="text-2xl font-serif mb-4">{{ service.title }}</h3>
-                <p class="text-neutral-600 font-light mb-6">{{ service.description }}</p>
-                <a href="{{ service.link }}" class="text-xs font-bold uppercase tracking-widest border-b border-neutral-200 pb-1 group-hover:border-orange-600 transition-colors">Learn More</a>
+                <p class="text-neutral-600 font-light mb-6 transition-all group-[.is-expanded]:hidden">{{ service.description | truncate(60) }}</p>
+                <div class="hidden group-[.is-expanded]:block animate-in fade-in slide-in-from-top-2 duration-300">
+                    <p class="text-neutral-600 font-light mb-6">{{ service.description }}</p>
+                    <a href="{{ service.link }}" class="text-xs font-bold uppercase tracking-widest text-yarrow border-b border-yarrow/20 hover:border-yarrow pb-1 transition-colors">Apply / Learn More</a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -73,7 +79,7 @@ bodyClass: home-page
          <div class="flex flex-col md:flex-row justify-center gap-6">
              <a href="/{{ lang }}/resources/" class="bg-white border border-neutral-300 px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_need_help }}</a>
              <a href="/{{ lang }}/volunteer/" class="bg-white border border-neutral-300 px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_volunteer }}</a>
-             <a href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L" target="_blank" class="bg-orange-600 border border-orange-600 text-white px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:border-black transition-all">{{ home[lang].btn_donate_cta }}</a>
+             <a href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L" target="_blank" class="bg-yarrow border border-yarrow text-black px-8 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white hover:border-black transition-all">{{ home[lang].btn_donate_cta }}</a>
          </div>
     </div>
 </section>
@@ -83,28 +89,28 @@ bodyClass: home-page
     <div class="container mx-auto px-6 max-w-4xl">
         <div class="flex flex-col md:flex-row gap-12 items-start">
             <div class="flex-1">
-                <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">{{ home[lang].needs_title }}</span>
+                <span class="text-yarrow font-bold tracking-widest text-xs uppercase mb-4 block">{{ home[lang].needs_title }}</span>
                 <h3 class="text-3xl font-serif mb-6">{{ home[lang].needs_heading }}</h3>
                 <ul class="space-y-4 mb-8">
                     {% for need in home[lang].needs_list %}
                     <li class="flex items-center gap-3 text-neutral-600 font-light"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> {{ need }}</li>
                     {% endfor %}
                 </ul>
-                <a href="mailto:hopehasnoborders@gmail.com" class="text-orange-600 font-serif italic text-lg hover:text-black transition-colors flex items-center gap-2">{{ home[lang].email_cta }} <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                <a href="mailto:hopehasnoborders@gmail.com" class="text-yarrow font-serif italic text-lg hover:text-black transition-colors flex items-center gap-2">{{ home[lang].email_cta }} <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
             </div>
             <div class="flex-1 bg-neutral-900 text-white p-10 rounded-sm">
                 <h4 class="font-serif text-2xl mb-4">{{ home[lang].impact_title }}</h4>
                 <div class="space-y-6">
                     <div>
-                        <span class="text-3xl font-bold text-orange-500 block mb-1">{{ home[lang].stat_families }}</span>
+                        <span class="text-3xl font-bold text-yarrow block mb-1 impact-counter" data-target="{{ home[lang].stat_families | replace('+', '') }}">{{ home[lang].stat_families }}</span>
                         <span class="text-sm text-neutral-400 uppercase tracking-widest">{{ home[lang].stat_families_label }}</span>
                     </div>
                     <div>
-                        <span class="text-3xl font-bold text-orange-500 block mb-1">{{ home[lang].stat_legal }}</span>
+                        <span class="text-3xl font-bold text-yarrow block mb-1 impact-counter" data-target="{{ home[lang].stat_legal | replace('+', '') | replace(',', '') }}">{{ home[lang].stat_legal }}</span>
                         <span class="text-sm text-neutral-400 uppercase tracking-widest">{{ home[lang].stat_legal_label }}</span>
                     </div>
                      <div>
-                        <span class="text-3xl font-bold text-orange-500 block mb-1">{{ home[lang].stat_meals }}</span>
+                        <span class="text-3xl font-bold text-yarrow block mb-1 impact-counter" data-target="{{ home[lang].stat_meals | replace('+', '') | replace(',', '') }}">{{ home[lang].stat_meals }}</span>
                         <span class="text-sm text-neutral-400 uppercase tracking-widest">{{ home[lang].stat_meals_label }}</span>
                     </div>
                     <p class="text-xs text-neutral-500 mt-6 italic">{{ home[lang].stat_disclaimer }}</p>
@@ -114,9 +120,102 @@ bodyClass: home-page
     </div>
 </section>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Impact Counters Animation
+    const counters = document.querySelectorAll('.impact-counter');
+    const observerOptions = { threshold: 0.5 };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current).toLocaleString() + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target.toLocaleString() + '+';
+                    }
+                };
+                updateCounter();
+                observer.unobserve(counter);
+            }
+        });
+    }, observerOptions);
+    
+    counters.forEach(counter => observer.observe(counter));
+
+    // Testimonials Carousel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const totalSlides = slides.length;
+
+    window.moveSlide = (step) => {
+        slides[currentSlide].classList.add('hidden');
+        currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+        slides[currentSlide].classList.remove('hidden');
+    };
+
+    if (totalSlides > 0) {
+        setInterval(() => window.moveSlide(1), 8000);
+    }
+});
+</script>
+
+<section class="py-24 bg-white overflow-hidden">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-yarrow font-bold tracking-widest text-xs uppercase mb-4 block">{{ testimonials[lang].section_subtitle }}</span>
+            <h2 class="text-4xl font-serif leading-tight text-neutral-900">{{ testimonials[lang].section_title }}</h2>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative group">
+            {% for testimonial in testimonials[lang].testimonials %}
+            <div class="testimonial-slide {% if not loop.first %}hidden{% endif %} animate-in fade-in duration-700">
+                <div class="bg-neutral-50 p-12 md:p-20 rounded-sm relative border border-neutral-100">
+                    <i data-lucide="quote" class="w-12 h-12 text-yarrow/20 absolute top-10 left-10"></i>
+                    <p class="text-2xl md:text-3xl font-serif text-neutral-800 mb-10 leading-relaxed relative z-10">"{{ testimonial.quote }}"</p>
+                    <div class="flex items-center gap-4">
+                        {% if testimonial.photo %}
+                        <img src="{{ testimonial.photo }}" alt="{{ testimonial.name }}" class="w-12 h-12 rounded-full object-cover grayscale">
+                        {% else %}
+                        <div class="w-12 h-12 rounded-full bg-neutral-200 flex items-center justify-center">
+                            <i data-lucide="user" class="w-6 h-6 text-neutral-400"></i>
+                        </div>
+                        {% endif %}
+                        <div>
+                            <span class="block font-bold text-neutral-900">{{ testimonial.name }}</span>
+                            <span class="text-xs text-neutral-500 uppercase tracking-widest">{{ testimonial.location }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="absolute top-1/2 -translate-y-1/2 -left-6 md:-left-12 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button onclick="moveSlide(-1)" class="p-4 bg-white shadow-lg rounded-full hover:bg-black hover:text-white transition-all">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="absolute top-1/2 -translate-y-1/2 -right-6 md:-right-12 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button onclick="moveSlide(1)" class="p-4 bg-white shadow-lg rounded-full hover:bg-black hover:text-white transition-all">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="py-24 bg-neutral-50">
   <div class="container mx-auto px-6 max-w-4xl text-center">
-    <i data-lucide="heart" class="w-6 h-6 text-orange-600 mx-auto mb-10 animate-pulse"></i>
+    <i data-lucide="heart" class="w-6 h-6 text-yarrow mx-auto mb-10 animate-pulse"></i>
     <h2 class="text-3xl md:text-5xl font-serif leading-snug text-neutral-900 mb-10 text-balance">{{ home[lang].mission_quote }}</h2>
   </div>
 </section>

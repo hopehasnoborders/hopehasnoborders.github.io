@@ -9,8 +9,8 @@ layout: layouts/base.njk
 
 <div class="pt-32 pb-20 bg-neutral-900 text-white">
     <div class="container mx-auto px-6 text-center max-w-4xl">
-        <span class="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block animate-in">{{ programs[lang].hero_label }}</span>
-        <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight animate-in delay-100">{{ programs[lang].hero_title }}</h1>
+        <span class="text-yarrow font-bold tracking-widest text-xs uppercase mb-4 block animate-in">{{ programs[lang].hero_label }}</span>
+        <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight animate-in delay-100 text-white">{{ programs[lang].hero_title }}</h1>
         <p class="text-xl text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto animate-in delay-200">{{ programs[lang].hero_text }}</p>
     </div>
 </div>
@@ -23,11 +23,11 @@ layout: layouts/base.njk
             <div>
                 <h3 class="text-3xl font-serif mb-6">{{ programs[lang].prog1_title }}</h3>
                 <p class="text-neutral-600 font-light mb-6 leading-relaxed">{{ programs[lang].prog1_desc }}</p>
-                <a href="{{ programs[lang].prog1_link }}" target="_blank" class="text-orange-600 font-bold uppercase text-xs tracking-widest hover:text-black transition-colors flex items-center gap-2">{{ programs[lang].prog1_cta }} <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                <a href="{{ programs[lang].prog1_link }}" target="_blank" class="text-yarrow font-bold uppercase text-xs tracking-widest hover:text-black transition-colors flex items-center gap-2">{{ programs[lang].prog1_cta }} <i data-lucide="external-link" class="w-4 h-4"></i></a>
             </div>
-            <div class="bg-orange-50 p-8 rounded-sm border border-orange-100">
-                <i data-lucide="heart-handshake" class="w-12 h-12 text-orange-600 mb-4"></i>
-                 <p class="text-sm text-orange-800 italic">{{ programs[lang].prog1_quote }}</p>
+            <div class="bg-neutral-50 p-8 rounded-sm border border-neutral-100">
+                <i data-lucide="heart-handshake" class="w-12 h-12 text-yarrow mb-4"></i>
+                 <p class="text-sm text-neutral-600 italic">{{ programs[lang].prog1_quote }}</p>
             </div>
         </div>
 
@@ -39,9 +39,9 @@ layout: layouts/base.njk
                 <ul class="space-y-4">
                     {% for link in programs[lang].prog2_links %}
                     <li>
-                        <a href="{{ link.url }}" target="_blank" class="flex items-center justify-between group p-3 bg-white border border-neutral-200 hover:border-orange-600 transition-colors">
+                        <a href="{{ link.url }}" target="_blank" class="flex items-center justify-between group p-3 bg-white border border-neutral-200 hover:border-yarrow transition-colors">
                             <span class="font-medium text-sm">{{ link.text }}</span>
-                            <i data-lucide="chevron-right" class="w-4 h-4 text-neutral-400 group-hover:text-orange-600"></i>
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-neutral-400 group-hover:text-yarrow"></i>
                         </a>
                     </li>
                     {% endfor %}
@@ -60,7 +60,7 @@ layout: layouts/base.njk
             <div>
                 <h3 class="text-3xl font-serif mb-6">{{ programs[lang].prog3_title }}</h3>
                 <p class="text-neutral-600 font-light mb-6 leading-relaxed">{{ programs[lang].prog3_desc }}</p>
-                 <a href="{{ programs[lang].prog3_link }}" target="_blank" class="text-orange-600 font-bold uppercase text-xs tracking-widest hover:text-black transition-colors flex items-center gap-2">{{ programs[lang].prog3_cta }} <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                 <a href="{{ programs[lang].prog3_link }}" target="_blank" class="text-yarrow font-bold uppercase text-xs tracking-widest hover:text-black transition-colors flex items-center gap-2">{{ programs[lang].prog3_cta }} <i data-lucide="external-link" class="w-4 h-4"></i></a>
             </div>
              <div class="bg-neutral-50 p-8 rounded-sm border border-neutral-100">
                 <h4 class="font-serif text-lg mb-4">{{ programs[lang].prog3_sub_title }}</h4>

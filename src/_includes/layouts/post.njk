@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 <article class="container mx-auto px-6 py-24 max-w-4xl">
   <div class="mb-12 text-center">
-    <span class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-4 block">{{ date | date }}</span>
+    <span class="text-xs font-bold uppercase tracking-widest text-yarrow mb-4 block">{{ date | date }}</span>
     <h1 class="text-4xl md:text-6xl font-serif mb-6">{{ title }}</h1>
     {% if description %}
     <p class="text-xl text-neutral-600 font-light max-w-2xl mx-auto">{{ description }}</p>
@@ -19,7 +19,7 @@ layout: layouts/base.njk
   </div>
   {% endif %}
 
-  <div class="prose prose-lg mx-auto prose-neutral prose-headings:font-serif prose-a:text-orange-600 hover:prose-a:text-black transition-colors">
+  <div class="prose prose-lg mx-auto prose-neutral prose-headings:font-serif prose-a:text-yarrow hover:prose-a:text-black transition-colors">
     {{ content | safe }}
   </div>
   

@@ -14,7 +14,10 @@
         "footer_terms": "Terms of Use",
         "lang_name": "English",
         "lang_switch_label": "Español",
-        "lang_switch_url": "/es/"
+        "lang_switch_url": "/es/",
+        "announcement_text": "Join our Crisis to Hope campaign: Help bridge the gap for families this winter.",
+        "announcement_link_text": "Learn More",
+        "announcement_link_url": "/en/programs/"
     },
     "es": {
         "nav_home": "Inicio",
@@ -31,6 +34,9 @@
         "footer_terms": "Términos de Uso",
         "lang_name": "Español",
         "lang_switch_label": "English",
-        "lang_switch_url": "/en/"
+        "lang_switch_url": "/en/",
+        "announcement_text": "Únase a nuestra campaña Crisis to Hope: Ayude a cerrar la brecha para las familias este invierno.",
+        "announcement_link_text": "Saber Más",
+        "announcement_link_url": "/es/programs/"
     }
 }

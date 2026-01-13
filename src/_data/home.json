@@ -4,12 +4,12 @@
         "description": "A grassroots response to the humanitarian crisis in Denver, bridging the gap from crisis to stability.",
         "hero_subtitle": "Est. 2023 • Denver, CO",
         "hero_main_text": "HOPE<br/>HAS NO<br/>BORDERS",
-        "hero_body_text": "A grassroots response to the humanitarian crisis in Denver, bridging the gap from crisis to stability through housing, legal aid, and dignity.",
+        "hero_body_text": "A grassroots response to humanitarian crises in Denver, bridging the gap from crisis to stability through housing, legal aid, and dignity.",
         "video_title": "See Our Impact",
         "video_quote": "\"We are moms, neighbors, and community members bridging the gap from crisis to stability.\"",
         "video_url": "https://www.youtube.com/embed/mh9w6QWdtf8?title=Hope Has No Borders Mission Video",
         "services_title": "What We Do",
-        "services_heading": "Comprehensive Support for Immigrants",
+        "services_heading": "Comprehensive Support for the Community",
         "services": [
             {
                 "icon": "home",
@@ -26,11 +26,11 @@
             {
                 "icon": "users",
                 "title": "Community Integration",
-                "description": "Connecting immigrants and asylum-seekers to local service projects to build resume skills and community.",
+                "description": "Connecting families and asylum-seekers to local service projects to build resume skills and community.",
                 "link": "/en/programs/"
             }
         ],
-        "mission_quote": "\"To provide humanitarian aid and support to immigrants and asylum seekers, fostering a community where everyone has the opportunity to thrive.\"",
+        "mission_quote": "\"To provide humanitarian aid and support to those in need, fostering a community where everyone has the opportunity to thrive.\"",
         "btn_resources": "Find Resources",
         "btn_impact": "Our Impact",
         "btn_donate": "Donate Now",
@@ -60,12 +60,12 @@
         "description": "Una respuesta de base a la crisis humanitaria en Denver, cerrando la brecha de la crisis a la estabilidad.",
         "hero_subtitle": "Est. 2023 • Denver, CO",
         "hero_main_text": "LA ESPERANZA<br/>NO TIENE<br/>FRONTERAS",
-        "hero_body_text": "Una respuesta de base a la crisis humanitaria en Denver, cerrando la brecha de la crisis a la estabilidad a través de la vivienda, la asistencia legal y la dignidad.",
+        "hero_body_text": "Una respuesta de base a las crisis humanitarias en Denver, cerrando la brecha de la crisis a la estabilidad a través de la vivienda, la asistencia legal y la dignidad.",
         "video_title": "Vea Nuestro Impacto",
         "video_quote": "\"Somos madres, vecinos y miembros de la comunidad cerrando la brecha de la crisis a la estabilidad.\"",
         "video_url": "https://www.youtube.com/embed/mh9w6QWdtf8?title=Video de la Misión Hope Has No Borders",
         "services_title": "Lo Que Hacemos",
-        "services_heading": "Apoyo Integral para Recién Llegados",
+        "services_heading": "Apoyo Integral para la Comunidad",
         "services": [
             {
                 "icon": "home",
@@ -82,11 +82,11 @@
             {
                 "icon": "users",
                 "title": "Integración Comunitaria",
-                "description": "Conectando a los recién llegados con proyectos de servicio local para desarrollar habilidades y comunidad.",
+                "description": "Conectando a familias y solicitantes de asilo con proyectos de servicio local para desarrollar habilidades y comunidad.",
                 "link": "/es/programs/"
             }
         ],
-        "mission_quote": "\"Proporcionar ayuda humanitaria y apoyo a inmigrantes y solicitantes de asilo, fomentando una comunidad donde todos tengan la oportunidad de prosperar.\"",
+        "mission_quote": "\"Proporcionar ayuda humanitaria y apoyo a quienes lo necesitan, fomentando una comunidad donde todos tengan la oportunidad de prosperar.\"",
         "btn_resources": "Buscar Recursos",
         "btn_impact": "Nuestro Impacto",
         "btn_donate": "Donar Ahora",

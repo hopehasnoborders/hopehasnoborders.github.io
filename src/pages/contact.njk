@@ -9,14 +9,14 @@ layout: layouts/base.njk
 
 <div class="pt-32 pb-20 bg-neutral-900 text-white">
     <div class="container mx-auto px-6 text-center max-w-4xl">
-        <h1 class="text-5xl md:text-7xl font-serif mb-8">{{ contact[lang].hero_title }}</h1>
-        <p class="text-xl text-neutral-400 font-light">{{ contact[lang].hero_text }}</p>
+        <h1 class="text-5xl md:text-7xl font-serif mb-8 text-white animate-in">{{ contact[lang].hero_title }}</h1>
+        <p class="text-xl text-neutral-400 font-light animate-in delay-100">{{ contact[lang].hero_text }}</p>
     </div>
 </div>
 
 <section class="py-24 bg-white text-center">
     <div class="container mx-auto px-6">
-        <a href="mailto:{{ contact[lang].email }}" class="text-3xl font-serif text-orange-600 hover:text-black transition-colors">{{ contact[lang].email }}</a>
+        <a href="mailto:{{ contact[lang].email }}" class="text-3xl font-serif text-yarrow hover:text-black transition-all">{{ contact[lang].email }}</a>
         <p class="text-neutral-500 mt-4">{{ contact[lang].location }}</p>
     </div>
 </section>
