@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
         // Revalidate each tag (primary method for on-demand revalidation)
         console.log(`[Revalidate] Revalidating tags for ${documentType}:`, tagsToRevalidate)
         for (const tag of tagsToRevalidate) {
-            revalidateTag(tag)
+            revalidateTag(tag, 'max')
         }
 
         // Revalidate each path (fallback)
