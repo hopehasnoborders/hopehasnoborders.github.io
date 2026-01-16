@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { CogIcon, HomeIcon, InfoOutlineIcon, DocumentsIcon, HelpCircleIcon, UsersIcon, HeartIcon, CreditCardIcon, SparklesIcon, ChatIcon } from '@sanity/icons'
+import { CogIcon, HomeIcon, InfoOutlineIcon, DocumentsIcon, HelpCircleIcon, UsersIcon, HeartIcon, CreditCardIcon, SparklesIcon, CommentIcon } from '@sanity/icons'
 
 // Helper to create singleton list items
 const singletonListItem = (S: any, typeName: string, title: string, icon: any) =>
@@ -33,7 +33,7 @@ export const deskStructure: StructureResolver = (S) =>
             singletonListItem(S, 'pageResources', '📚 Resources', HelpCircleIcon),
 
             // 6. Stories
-            singletonListItem(S, 'pageStories', '💬 Stories', ChatIcon),
+            singletonListItem(S, 'pageStories', '💬 Stories', CommentIcon),
 
             // 7. Volunteer
             singletonListItem(S, 'pageVolunteer', '🤝 Volunteer', UsersIcon),

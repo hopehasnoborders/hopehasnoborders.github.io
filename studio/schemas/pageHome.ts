@@ -1,5 +1,6 @@
 import { defineType, defineField } from 'sanity'
 import { i18nString, i18nText } from './helpers/i18n'
+import { seoFields } from './objects/seo'
 
 export default defineType({
     name: 'pageHome',
@@ -10,6 +11,7 @@ export default defineType({
         { name: 'stats', title: 'Stats Bar' },
         { name: 'services', title: 'Services Section' },
         { name: 'testimonials', title: 'Testimonials Section' },
+        { name: 'seo', title: '🔍 SEO' },
     ],
     fields: [
         // HERO
@@ -105,6 +107,8 @@ export default defineType({
                 i18nText('subtitle', 'Section Subtitle'),
             ],
         }),
+
+        ...seoFields,
     ],
     preview: {
         prepare() {

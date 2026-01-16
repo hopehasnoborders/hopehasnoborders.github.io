@@ -62,8 +62,21 @@ export default defineType({
         }),
 
         // SEO
-        i18nString('title', 'Site Title'),
-        i18nText('description', 'Site Description'),
+        i18nString('title', 'Base Site Title', 'seo'),
+        i18nText('description', 'Default Site Description', 'seo'),
+        defineField({
+            name: 'ogImage',
+            title: 'Default Share Image (OG Image)',
+            type: 'image',
+            group: 'seo',
+            options: { hotspot: true },
+        }),
+        defineField({
+            name: 'favicon',
+            title: 'Favicon',
+            type: 'image',
+            group: 'seo',
+        }),
 
         // CONTACT
         defineField({

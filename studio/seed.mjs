@@ -7,7 +7,7 @@ const client = createClient({
     projectId: 'fnj6du1o',
     dataset: 'production',
     apiVersion: '2024-01-01',
-    token: process.env.SANITY_API_TOKEN || 'sktFbIbvK59tSF3YYWKqUjbUksKE6V03RSApqQWBNzUpddlOpuHBsOWWNvmw1c40CaYceqNgKs8ypLDTpxVBLgQ6P9y7a3notB67oiu8UkhjA2jPlQ0DCbMGjRKdbV8F6J4jtzVpyl2xN8ayIlzpHYqW9Gxca6zfhqGSOb4WRoe9q7j1hDwq',
+    token: process.env.SANITY_API_TOKEN || 'skFiDFb23tEMsUuIIj9dLqcC2aFnF2DAk5d8q55RWkdUTxGyE4A79tFSLEHskZ4lBtbeJI4JdXgNYgDqrIJ2d2TErXOdpH6aXQGnMKig67ATqI155It3ZDsBDScuOxdmSgej6LP7WzVlTzdZujwwLpbsiI1eLCBq0u3U38PSWIrvEtGEsxok',
     useCdn: false,
 })
 
