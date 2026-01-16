@@ -30,7 +30,7 @@ async function seed() {
                 en: 'We need winter coats! Drop off today.',
                 es: '¡Necesitamos abrigos de invierno! Entréguelos hoy.'
             },
-            linkText: { en: 'Learn More', es: 'Aprende Más' },
+            linkText: { en: 'Act Now', es: 'Actúa Ahora' },
             linkType: 'internal',
             internalRoute: 'donate',
         },

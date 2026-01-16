@@ -9,6 +9,7 @@ interface ClientLayoutProps {
     announcement: {
         active: boolean
         text: { en: string; es: string }
+        linkText?: { en: string; es: string }
         linkType?: 'internal' | 'external'
         internalRoute?: string
         externalUrl?: string
@@ -44,6 +45,8 @@ function AnnouncementBarClient({ announcement }: { announcement: NonNullable<Cli
         }
     }
 
+    const linkText = announcement.linkText ? t(announcement.linkText) : 'Act Now'
+
     return (
         <div
             className="bg-[#FFB81C] text-black text-xs font-bold tracking-widest uppercase py-3 px-4 text-center cursor-pointer hover:opacity-90 transition-opacity"
@@ -51,7 +54,8 @@ function AnnouncementBarClient({ announcement }: { announcement: NonNullable<Cli
             role="button"
             tabIndex={0}
         >
-            {t(announcement.text)} <span className="underline ml-2">Act Now</span>
+            {t(announcement.text)} <span className="underline ml-2">{linkText}</span>
         </div>
     )
 }
+
