@@ -63,7 +63,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <ImpactSection stats={home?.stats} />
+      <ImpactSection data={home?.impactSection} />
 
       <Testimonials testimonials={testimonials} />
 
