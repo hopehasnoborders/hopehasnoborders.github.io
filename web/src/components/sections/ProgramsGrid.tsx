@@ -93,12 +93,13 @@ export function ProgramsGrid({ header, programs }: ProgramsGridProps) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
+                            className="h-full"
                         >
                             <Link
                                 href={getLink(program)}
-                                className="block group"
+                                className="block group h-full"
                             >
-                                <div className="bg-[var(--bone)] border-4 border-transparent hover:border-[var(--yarrow)] rounded-2xl p-8 md:p-10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 active:shadow-lg min-h-[320px] flex flex-col">
+                                <div className="bg-[var(--bone)] border-4 border-transparent hover:border-[var(--yarrow)] rounded-2xl p-8 md:p-10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 active:shadow-lg h-full flex flex-col">
                                     {/* Icon */}
                                     <div className="w-16 h-16 md:w-20 md:h-20 bg-[var(--forrest)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[var(--yarrow)] transition-colors duration-300">
                                         <DynamicIcon
