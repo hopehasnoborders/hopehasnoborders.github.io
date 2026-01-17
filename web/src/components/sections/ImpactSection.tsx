@@ -134,6 +134,7 @@ const DEFAULT_IMPACT_DATA = {
             ]
         }
     ],
+    testimonials: [] as Testimonial[],
     closingCTA: {
         text: { en: 'Support Our Work', es: 'Apoya Nuestro Trabajo' },
         link: '/donate',
