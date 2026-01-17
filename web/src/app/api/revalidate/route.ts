@@ -9,10 +9,9 @@ const REVALIDATION_MAP: Record<string, string[]> = {
     pageStories: ['/stories'],
     pageResources: ['/resources'],
     pageVolunteer: ['/volunteer'],
-    pageDonate: ['/donate'],
     program: ['/', '/programs'],
     testimonial: ['/', '/stories'],
-    siteSettings: ['/', '/about', '/programs', '/stories', '/resources', '/volunteer', '/donate'],
+    siteSettings: ['/', '/about', '/programs', '/stories', '/resources', '/volunteer'],
 }
 
 // Map Sanity document types to cache tags for on-demand revalidation
@@ -23,7 +22,6 @@ const TAG_MAP: Record<string, string[]> = {
     pageStories: ['stories'],
     pageResources: ['resources'],
     pageVolunteer: ['volunteer'],
-    pageDonate: ['donate'],
     program: ['programs'],
     testimonial: ['testimonials'],
     siteSettings: ['settings'],
@@ -39,14 +37,22 @@ export async function POST(request: NextRequest) {
         // Validate the webhook secret
         const secret = request.headers.get('x-sanity-webhook-secret')
 
+        console.log('[Revalidate] Received webhook request')
+        console.log('[Revalidate] Secret present:', !!secret)
+        console.log('[Revalidate] Env secret present:', !!process.env.SANITY_REVALIDATE_SECRET)
+
         if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
             console.log('[Revalidate] Invalid or missing secret')
+            console.log('[Revalidate] Received:', secret?.substring(0, 5) + '...')
             return NextResponse.json({ message: 'Invalid secret' }, { status: 401 })
         }
 
         // Parse the webhook payload
         const body: SanityWebhookPayload = await request.json()
         const documentType = body._type
+
+        console.log('[Revalidate] Document type:', documentType)
+        console.log('[Revalidate] Document ID:', body._id)
 
         if (!documentType) {
             console.log('[Revalidate] No document type in payload')
@@ -68,13 +74,23 @@ export async function POST(request: NextRequest) {
         // Revalidate each tag (primary method for on-demand revalidation)
         console.log(`[Revalidate] Revalidating tags for ${documentType}:`, tagsToRevalidate)
         for (const tag of tagsToRevalidate) {
-            revalidateTag(tag, 'max')
+            try {
+                revalidateTag(tag, 'page')
+                console.log(`[Revalidate] Successfully revalidated tag: ${tag}`)
+            } catch (e) {
+                console.error(`[Revalidate] Error revalidating tag ${tag}:`, e)
+            }
         }
 
         // Revalidate each path (fallback)
         console.log(`[Revalidate] Revalidating paths for ${documentType}:`, pathsToRevalidate)
         for (const path of pathsToRevalidate) {
-            revalidatePath(path)
+            try {
+                revalidatePath(path)
+                console.log(`[Revalidate] Successfully revalidated path: ${path}`)
+            } catch (e) {
+                console.error(`[Revalidate] Error revalidating path ${path}:`, e)
+            }
         }
 
         return NextResponse.json({
@@ -102,6 +118,7 @@ export async function GET() {
         requiredHeaders: {
             'x-sanity-webhook-secret': 'Your SANITY_REVALIDATE_SECRET value'
         },
-        supportedTypes: Object.keys(REVALIDATION_MAP)
+        supportedTypes: Object.keys(REVALIDATION_MAP),
+        envConfigured: !!process.env.SANITY_REVALIDATE_SECRET
     })
 }
