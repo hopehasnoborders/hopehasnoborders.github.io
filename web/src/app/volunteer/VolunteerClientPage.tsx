@@ -10,42 +10,49 @@ import { useLanguage } from '@/lib/LanguageContext'
 import Link from 'next/link'
 import Image from 'next/image'
 
-// Donation needs data
+// Donation needs data with links to form pages
 const DONATION_NEEDS = [
     {
         icon: Bike,
         title: { en: 'Transportation Support', es: 'Apoyo de Transporte' },
-        items: { en: 'Bikes, helmets, locks, RTD bus passes', es: 'Bicicletas, cascos, candados, pases de autobús RTD' }
+        items: { en: 'Bikes, helmets, locks, RTD bus passes', es: 'Bicicletas, cascos, candados, pases de autobús RTD' },
+        link: '/donate-items/transportation'
     },
     {
         icon: Mail,
         title: { en: 'Mailing Support', es: 'Apoyo de Correo' },
-        items: { en: 'Stamps, manila envelopes', es: 'Estampillas, sobres manila' }
+        items: { en: 'Stamps, manila envelopes', es: 'Estampillas, sobres manila' },
+        link: '/donate-items/mailing'
     },
     {
         icon: ShoppingBag,
         title: { en: 'Food Support', es: 'Apoyo Alimentario' },
-        items: { en: 'Gift cards, groceries, frozen meals, dry goods (beans, rice, pasta)', es: 'Tarjetas de regalo, comestibles, comidas congeladas, productos secos (frijoles, arroz, pasta)' }
+        items: { en: 'Gift cards, groceries, frozen meals, dry goods (beans, rice, pasta)', es: 'Tarjetas de regalo, comestibles, comidas congeladas, productos secos (frijoles, arroz, pasta)' },
+        link: '/donate-items/food'
     },
     {
         icon: Pill,
         title: { en: 'OTC Medicine', es: 'Medicamentos sin Receta' },
-        items: { en: "Children's and adult Ibuprofen, Neosporin, first aid kits", es: 'Ibuprofeno para niños y adultos, Neosporin, botiquines de primeros auxilios' }
+        items: { en: "Children's and adult Ibuprofen, Neosporin, first aid kits", es: 'Ibuprofeno para niños y adultos, Neosporin, botiquines de primeros auxilios' },
+        link: '/donate-items/medicine'
     },
     {
         icon: Gift,
         title: { en: 'Welcome Baskets', es: 'Canastas de Bienvenida' },
-        items: { en: "Hygiene items, food, new socks & underwear (adult & children's sizes), small activities/crafts for children", es: 'Artículos de higiene, alimentos, calcetines y ropa interior nuevos (tallas de adultos y niños), pequeñas actividades/manualidades para niños' }
+        items: { en: "Hygiene items, food, new socks & underwear (adult & children's sizes), small activities/crafts for children", es: 'Artículos de higiene, alimentos, calcetines y ropa interior nuevos (tallas de adultos y niños), pequeñas actividades/manualidades para niños' },
+        link: '/donate-items/welcome-baskets'
     },
     {
         icon: Bed,
         title: { en: 'Bedding', es: 'Ropa de Cama' },
-        items: { en: 'Twin mattresses, sheets, blankets, pillows', es: 'Colchones individuales, sábanas, mantas, almohadas' }
+        items: { en: 'Twin mattresses, sheets, blankets, pillows', es: 'Colchones individuales, sábanas, mantas, almohadas' },
+        link: '/donate-items/bedding'
     },
     {
         icon: Laptop,
         title: { en: 'Tech Support', es: 'Apoyo Tecnológico' },
-        items: { en: 'Working computers, phones, iPads', es: 'Computadoras, teléfonos, iPads en funcionamiento' }
+        items: { en: 'Working computers, phones, iPads', es: 'Computadoras, teléfonos, iPads en funcionamiento' },
+        link: '/donate-items/tech'
     }
 ]
 
@@ -158,17 +165,25 @@ export default function VolunteerClientPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="bg-[var(--bone)] border-2 border-[var(--forrest)]/10 rounded-xl p-6 hover:border-[var(--yarrow)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                             >
-                                <div className="w-12 h-12 bg-[var(--yarrow)] rounded-lg flex items-center justify-center mb-4">
-                                    <item.icon className="w-6 h-6 text-black" />
-                                </div>
-                                <h3 className="text-xl font-serif text-[var(--forrest)] mb-2">
-                                    {t(item.title)}
-                                </h3>
-                                <p className="text-neutral-600 text-sm font-light leading-relaxed">
-                                    {t(item.items)}
-                                </p>
+                                <Link
+                                    href={item.link}
+                                    className="block h-full bg-[var(--bone)] border-2 border-[var(--forrest)]/10 rounded-xl p-6 hover:border-[var(--yarrow)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                                >
+                                    <div className="w-12 h-12 bg-[var(--yarrow)] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                        <item.icon className="w-6 h-6 text-black" />
+                                    </div>
+                                    <h3 className="text-xl font-serif text-[var(--forrest)] mb-2 group-hover:text-black transition-colors">
+                                        {t(item.title)}
+                                    </h3>
+                                    <p className="text-neutral-600 text-sm font-light leading-relaxed mb-4">
+                                        {t(item.items)}
+                                    </p>
+                                    <span className="text-[var(--yarrow)] font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                                        {lang === 'es' ? 'Donar Ahora' : 'Donate Now'}
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                </Link>
                             </motion.div>
                         ))}
                     </div>
@@ -300,7 +315,7 @@ export default function VolunteerClientPage() {
                             }
                         </p>
                         <a
-                            href="https://forms.gle/your-volunteer-form"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScdNXmwTeT1PFjleJRK0szPcDTSVel97Qr6g4nNVz5Ex72sSA/viewform"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 bg-[var(--yarrow)] text-black px-12 py-6 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-white transition-all shadow-lg hover:shadow-xl"
