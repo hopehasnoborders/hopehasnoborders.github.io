@@ -68,11 +68,12 @@ export default defineType({
                     hidden: ({ parent }) => parent?.linkType !== 'internal',
                     options: {
                         list: [
-                            { title: 'Donate', value: 'donate' },
                             { title: 'Volunteer', value: 'volunteer' },
                             { title: 'Programs', value: 'programs' },
                             { title: 'Resources', value: 'resources' },
                             { title: 'About', value: 'about' },
+                            { title: 'Host Homes', value: 'hosthomes' },
+                            { title: 'Collaborate', value: 'collaborate' },
                         ],
                     },
                 }),
@@ -112,6 +113,22 @@ export default defineType({
                 defineField({ name: 'email', title: 'Email', type: 'email' }),
                 defineField({ name: 'phone', title: 'Phone', type: 'string' }),
                 defineField({ name: 'address', title: 'Address', type: 'text', rows: 2 }),
+            ],
+        }),
+
+        // DONATION
+        defineField({
+            name: 'donation',
+            title: 'Donation Settings',
+            type: 'object',
+            group: 'contact',
+            fields: [
+                defineField({
+                    name: 'paypalUrl',
+                    title: 'PayPal Donation URL',
+                    type: 'url',
+                    description: 'The PayPal donation button link. All donate buttons will use this URL.',
+                }),
             ],
         }),
 

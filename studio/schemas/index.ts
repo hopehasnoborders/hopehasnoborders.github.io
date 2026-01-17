@@ -6,7 +6,6 @@ import pagePrograms from './pagePrograms'
 import pageResources from './pageResources'
 import pageStories from './pageStories'
 import pageVolunteer from './pageVolunteer'
-import pageDonate from './pageDonate'
 import program from './program'
 import testimonial from './testimonial'
 import product from './product'
@@ -20,10 +19,8 @@ export const schemaTypes = [
     pageResources,
     pageStories,
     pageVolunteer,
-    pageDonate,
     // Document types (multiple instances)
     program,
     testimonial,
     product,
 ]
-
