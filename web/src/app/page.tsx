@@ -1,6 +1,6 @@
 import { sanityFetch } from '@/lib/sanity.server'
 import { homePageQuery, allProgramsQuery, allTestimonialsQuery, siteSettingsQuery } from '@/lib/queries'
-import { Hero, VideoSection, ProgramsGrid, ImpactSection, Testimonials } from '@/components/sections'
+import { Hero, VideoSection, ProgramsGrid, ImpactSection, Testimonials, EducationalGuides } from '@/components/sections'
 import { Heart } from 'lucide-react'
 import Link from 'next/link'
 import ClientTranslations from './ClientTranslations'
@@ -59,6 +59,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Educational Guides - Core Resource Hub */}
+      <EducationalGuides />
 
       <VideoSection video={home?.videoSection} />
 
