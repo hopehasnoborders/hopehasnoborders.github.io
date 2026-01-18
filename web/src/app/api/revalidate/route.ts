@@ -11,7 +11,8 @@ const REVALIDATION_MAP: Record<string, string[]> = {
     pageVolunteer: ['/volunteer'],
     program: ['/', '/programs'],
     testimonial: ['/', '/stories'],
-    siteSettings: ['/', '/about', '/programs', '/stories', '/resources', '/volunteer'],
+    siteSettings: ['/', '/about', '/programs', '/stories', '/resources', '/shop', '/volunteer'],
+    product: ['/shop'],
 }
 
 // Map Sanity document types to cache tags for on-demand revalidation
@@ -25,6 +26,7 @@ const TAG_MAP: Record<string, string[]> = {
     program: ['programs'],
     testimonial: ['testimonials'],
     siteSettings: ['settings'],
+    product: ['products'],
 }
 
 interface SanityWebhookPayload {
