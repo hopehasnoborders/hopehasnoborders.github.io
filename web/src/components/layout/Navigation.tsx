@@ -71,7 +71,7 @@ export function Navigation() {
                     </button>
 
                     <a
-                        href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L"
+                        href="https://www.coloradogives.org/organization/hopehasnoborders"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-neutral-900 text-white hover:bg-[#FFB81C] px-6 py-3 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] transition-all"
@@ -126,7 +126,7 @@ export function Navigation() {
                             <div className="w-12 h-px bg-white/20 my-4" />
 
                             <a
-                                href="https://www.paypal.com/donate/?hosted_button_id=JG5GT99FFDQ4L"
+                                href="https://www.coloradogives.org/organization/hopehasnoborders"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={() => setIsOpen(false)}

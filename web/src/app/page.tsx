@@ -31,7 +31,17 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <Hero hero={home?.hero} />
+      <Hero hero={{
+        ...home?.hero,
+        primaryButton: {
+          text: { en: "Our Programs", es: "Nuestros Programas" },
+          link: "/programs"
+        },
+        secondaryButton: {
+          text: { en: "Find Resources", es: "Buscar Recursos" },
+          link: "/resources"
+        }
+      }} />
 
       {/* Immediate Help - Comprehensive Support for Immigrants (Most Urgent) */}
       <ProgramsGrid
@@ -53,7 +63,7 @@ export default async function Home() {
             <Link href="/volunteer" className="bg-white border border-neutral-200 px-10 py-5 rounded-sm font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black hover:text-white hover:border-black transition-all text-center">
               <ClientTranslations en="I Want to Volunteer" es="Quiero Ser Voluntario" />
             </Link>
-            <Link href="/donate" className="bg-white border border-neutral-200 px-10 py-5 rounded-sm font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black hover:text-white hover:border-black transition-all text-center">
+            <Link href="https://www.coloradogives.org/organization/hopehasnoborders" target="_blank" rel="noopener noreferrer" className="bg-white border border-neutral-200 px-10 py-5 rounded-sm font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black hover:text-white hover:border-black transition-all text-center">
               <ClientTranslations en="I Want to Donate" es="Quiero Donar" />
             </Link>
           </div>
