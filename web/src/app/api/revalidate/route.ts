@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
         console.log(`[Revalidate] Revalidating tags for ${documentType}:`, tagsToRevalidate)
         for (const tag of tagsToRevalidate) {
             try {
-                revalidateTag(tag)
+                revalidateTag(tag, 'max')
                 console.log(`[Revalidate] Successfully revalidated tag: ${tag}`)
             } catch (e) {
                 console.error(`[Revalidate] Error revalidating tag ${tag}:`, e)
