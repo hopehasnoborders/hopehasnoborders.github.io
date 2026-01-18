@@ -1,5 +1,5 @@
 import type { StructureResolver } from 'sanity/structure'
-import { CogIcon, HomeIcon, InfoOutlineIcon, DocumentsIcon, HelpCircleIcon, UsersIcon, HeartIcon, CreditCardIcon, SparklesIcon, CommentIcon } from '@sanity/icons'
+import { CogIcon, HomeIcon, InfoOutlineIcon, DocumentsIcon, HelpCircleIcon, UsersIcon, HeartIcon, CreditCardIcon, SparklesIcon, CommentIcon, BasketIcon } from '@sanity/icons'
 
 // Helper to create singleton list items
 const singletonListItem = (S: any, typeName: string, title: string, icon: any) =>
@@ -59,5 +59,14 @@ export const deskStructure: StructureResolver = (S) =>
                 .child(
                     S.documentTypeList('testimonial')
                         .title('All Testimonials')
+                ),
+
+            // 11. Shop Products (List)
+            S.listItem()
+                .title('🛍 Shop Products')
+                .icon(BasketIcon)
+                .child(
+                    S.documentTypeList('product')
+                        .title('All Products')
                 ),
         ])
